@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MacaronController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\HistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +20,7 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', [MacaronController::class, 'home']);
 
-Route::redirect('/home', '/');
+Route::redirect('/home', '/')->name('home');
 
 Route::get('/post', function() {
     return view('insert');
@@ -35,7 +38,7 @@ Route::prefix('/cart')->group(function() {
 
     Route::post('/insert/{macaron}', [CartController::class, 'insert']);
 
-});
+})->middleware('loggedin');
 
 Route::prefix('/insert')->group(function() {
 
@@ -44,5 +47,33 @@ Route::prefix('/insert')->group(function() {
     });
 
     Route::post('/form', [MacaronController::class, 'form']);
+
+});
+
+
+Route::controller(LoginRegisterController::class)->group(function() {
+    Route::get('/register', 'register')->name('register');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::post('/logout', 'logout')->name('logout');
+});
+
+Route::middleware('loggedin')->group(function(){
+
+    Route::controller(ProfileController::class)->group(function(){
+        Route::get('/profile','index')->name('profile');
+        Route::post('/update/profile','updateProfile')->name('updateprofile');
+        Route::post('/update/picture','updatePicture');
+    });
+
+    Route::controller(CartController::class)->group(function(){
+        Route::get('/cart/{id}/red','redItem');
+        Route::get('/cart/{id}/add','addItem');
+    });
+
+    Route::controller(HistoryController::class)->group(function(){
+        Route::post('/history/add','insert');
+    });
 
 });

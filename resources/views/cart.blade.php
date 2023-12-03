@@ -22,17 +22,17 @@
                             <h3 class="fw-bold">{{ $item->name }}</h3>
                             <h6 class="fw-bold pt-1 pb-2">Rp {{ $item->price }}</h6>
                             <div class="d-flex justify-content-around align-items-center py-1 border border-secondary rounded-5 " style="width:85px;">
-                                <a class="nav-link" href="">-</a>
-                                <span class="">1</span>
-                                <a class="nav-link" href="">+</a>
+                                <a class="nav-link" href="/cart/{{$item->id}}/red">-</a>
+                                <span class="">{{$item->amount}}</span>
+                                <a class="nav-link" href="/cart/{{$item->id}}/add">+</a>
                             </div>
                         </div>
-                        <h6 class="fw-bold">Total : Rp </h6>
+                        <h6 class="fw-bold">Total : Rp {{$item->amount * $item->price}}</h6>
+                        @php
+                            $total += ($item->price * $item->amount);
+                        @endphp
                     </div>
                 </div>
-                @php
-                    $total += $item->price;
-                @endphp
                 @empty
                 <div class="container bg-light p-5 mt-3 mb-4 border border-secondary">
                     <div class="d-flex flex-column justify-content-center align-items-center py-5">
@@ -66,7 +66,11 @@
                     </div>
                     <h6 class="py-2 fst-italic">Shipping, taxes, and discounts will be calculated at checkout</h6>
                     <div class="d-flex justify-content-center py-1">
-                        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Proceed to Checkout</button>
+                        <form action="/history/add" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$user->id}}">
+                            <button type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Proceed to Checkout</button>
+                        </form>
                     </div>
                 </div>
             </div>
