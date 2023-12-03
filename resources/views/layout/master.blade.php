@@ -5,30 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
+    <link rel="icon" href="{{url('/images/macaron logo.png')}}">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://www.dafontfree.net/embed/c25hcC1pdGMtcmVndWxhciZkYXRhLzEvcy83NjAvZGVzaWduLmdyYWZmaXRpLlNOQVBfX19fLnR0Zg" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    @cloudinaryJS
 </head>
 <body>
     <div class="container-fluid d-flex align-items-center justify-content-around">
-        <a href="#" class="nav-link d-flex align-items-center justify-content-center">
-            <i class="fa-solid fa-user fa-2x"></i>
-            <span class="fs-5 fw-bold ps-2">User</span>
-        </a>
+        @auth
+            <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="true">
+                <img src="{{$user->Profile->image_url}}" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small zIndex-4" aria-labelledby="dropdownUser1" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                <li><a class="dropdown-item" href="{{route('profile')}}">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <input type="submit" value="Sign Out">
+                        </form>
+                    </a>
+                </li>
+                </ul>
+            </div>
+        @else
+        <div class="dropdown text-end">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="true">
+                    <i class="fa-solid fa-user fa-2x"></i>
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" data-popper-placement="bottom-start" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                <li><a class="dropdown-item" href="{{route('login')}}">Sign in</a></li>
+                </ul>
+            </div>
+        @endauth
         <img class="py-3" style="width:140px;" src="images/macaron logo.png" alt="Macaron Logo">
         <div class="d-flex align-items-center gap-4">
-            <a class="nav-link position-relative" href="/">
-                <i class="fa-solid fa-heart fa-2x"></i>
-                {{-- @isset($cart)
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color:#036363">
-                    {{ count($cart) }}
-                    <span class="visually-hidden">cart notifs</span>
-                </span>
-                @endisset --}}
-            </a>
             <a class="nav-link position-relative" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <i class="fa-solid fa-cart-shopping fa-2x"></i>
                 @if(count($cart) != 0)

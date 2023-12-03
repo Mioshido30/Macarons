@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class HistoryDetail extends Model
 {
     use HasFactory;
 
-    public function User(){
-        return $this->belongsTo(User::class,'user_id','id');
+    public function History(){
+        return $this->belongsTo(History::class,'history_id','id');
     }
 }

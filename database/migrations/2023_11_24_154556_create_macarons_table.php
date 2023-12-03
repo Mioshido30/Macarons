@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('macarons', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name', 100);
             $table->string('description', 255);
             $table->integer('price');
@@ -21,6 +20,7 @@ return new class extends Migration
             $table->string('image_url', 100);
             $table->string('flavor', 100);
             $table->string('category', 100);
+            $table->timestamps();
         });
     }
 
