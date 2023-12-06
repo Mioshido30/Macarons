@@ -5,6 +5,9 @@
     },
     "routes": [
         { "src": "/build/(.*)", "dest": "/public/build/" },
+        { "src":"/css/(.*)","dest":"/public/css/"},
+        { "src":"/js/(.*)","dest":"/public/js/"},
+        { "src":"/images/(.*)","dest":"/public/images/"},
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
