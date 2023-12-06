@@ -18,4 +18,23 @@ $('.owl-carousel').owlCarousel({
     }
 })
 
+const minus = document.querySelector('.minus');
+const plus = document.querySelector('.plus');
+const amount = document.querySelector('.amount');
+
+let a = 1;
+minus.addEventListener('click', () => {
+    if(a > 1){
+        a--;
+        amount.innerText = a;
+        document.getElementById("amount").value = a;
+    }
+});
+
+plus.addEventListener('click', () => {
+    a++;
+    amount.innerText = a;
+    document.getElementById("amount").value = a;
+});
+
 

@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 150px;
+    width: 120px;
 }
 
 .triangle-patterns {
@@ -56,19 +56,6 @@ footer .content {
 
 .card-img-top {
     height: 320px;
-    transition: filter 0.5s;
-}
-
-.card-img-top:hover {
-    filter: brightness(0.8);
-}
-
-.hide {
-    display: none !important;
-}
-
-.card-img-top:hover + .hide {
-    display: flex !important;
 }
 
 .shop .card {
@@ -85,3 +72,73 @@ footer .content {
     border: 1px solid gray;
 }
 
+.product-header {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.minus:hover, .plus:hover {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.login main {
+    height:100vh;
+    background: #81a6e0;
+    background: linear-gradient(to bottom, #81a6e0 0%, #cc7bc5 100%);
+}
+
+.register main {
+    height:100vh;
+    background: #cc7bc5;
+    background: linear-gradient(to top, #81a6e0 0%, #cc7bc5 100%);
+}
+
+@media only screen and (max-width: 800px) {
+
+    #dropdownUser1 .name {
+        display: none !important;
+    }
+
+    .profile .header {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .shop-container .flex {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .detail-card {
+        align-items: center !important;
+    }
+
+    .detail-card .tags {
+        padding: 0 20px !important;
+        justify-content: center !important;
+    }
+
+    .details-desc {
+        align-items: center !important;
+        padding: 10px 30px !important;
+    }
+
+    .cart-product {
+        padding: 0 !important;
+    }
+
+    .cart-card {
+        flex-direction: column !important;
+        width: 230px !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .cart .flex {
+        flex-direction: column !important;
+    }
+}

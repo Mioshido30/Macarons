@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
 
         \DB::table('histories')->insert([
             'user_id' => 1,
-            'transaction_date' => date('Y-m-d'),
+            'transaction_date' => date('Y-m-d H:i:s'),
         ]);
 
         \DB::table('history_details')->insert([

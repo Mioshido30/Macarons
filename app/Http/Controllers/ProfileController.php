@@ -25,13 +25,13 @@ class ProfileController extends Controller
 
         $validateData = $req->validate([
             'name'=>'required|min:3',
-            'phone'=>'numeric'
+            'phone'=>'required|numeric'
         ]);
 
         $profile = Profile::find($req->id);
-        $profile->name =$validateData['name'];
+        $profile->name = $validateData['name'];
+        $profile->phone = $validateData['phone'];
         $profile->address = $req->address;
-        $profile->phone = $req->phone;
 
         $profile->save();
 

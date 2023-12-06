@@ -1,103 +1,70 @@
 @extends('layout.master')
 
-@section('title','Profile')
+@section('title',"{$user->Profile->name}'s Profile")
 @php
     $profile = $user->Profile;
 @endphp
 @section('content')
-<section style="background-color: #eee;">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card mb-4">
-            <div class="card-body text-center">
-                <img src="{{$user->Profile->image_url}}" alt="mdo" width="300" height="300" class="rounded-circle">
-                <div class="d-flex justify-content-center mb-2">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Edit Photo</button>
-                </div>
-            </div>
+<div class="profile bg-body-secondary pt-5 px-5" style="padding-bottom:200px">
+    <div class="header container d-flex bg-white p-4 justify-content-start gap-4 position-relative" style="max-width:1000px">
+        <div class="d-flex" style="width:200px;height:200px;">
+            <img src="{{$user->Profile->image_url}}" alt="mdo" class="w-100 object-fit-cover rounded-circle">
+        </div>
+        <div class="d-flex flex-column gap-1 mw-100" style="width:400px">
+            <span class="fs-2 fw-bold">{{$profile->name}}</span>
+            <span class="fs-6">{{$profile->email}}</span>
+            <span class="fs-6">(+62) {{$profile->phone}}</span>
+            <span class="fs-6">{{$profile->address}}</span>
+        </div>
+        <div class="btn-group position-absolute top-0 end-0 p-3">
+            <i class="fa-solid fa-ellipsis fa-2x" type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Photo</a></li>
+            </ul>
           </div>
-        </div>
-        <div class="col-lg-8">
-            <div class="card mb-4">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Full Name</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">{{$profile->name}}</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Email</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">{{$profile->email}}</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Phone</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">{{$profile->phone}}</p>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <p class="mb-0">Address</p>
-                    </div>
-                    <div class="col-sm-9">
-                      <p class="text-muted mb-0">{{$profile->address}}</p>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
-                <div class="d-flex justify-content-center mb-2">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Edit Detail</button>
-                </div>
-            </div>
-        </div>
-      </div>
     </div>
-    <div>
-        <h3>Transaction History</h3>
-        <table id="courseTable" class="table table-bordered">
-            <thead>
-                <tr>
-                    <td scope="col">Transaction Date</td>
-                    <td scope="col">Details</td>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="container d-flex flex-column bg-white p-4 mt-5 justify-content-start gap-4 position-relative" style="max-width:1000px">
+        <h3 class="fw-bold">Transactions History</h3>
+        <div style="overflow:scroll;">
+            <table class="table table-striped table-hover border">
+                <thead>
+                    <tr>
+                        <td scope="col">Transaction Date</td>
+                        <td scope="col">Item Name</td>
+                        <td scope="col">Price</td>
+                        <td scope="col">Quantity</td>
+                        <td scope="col">Total Price</td>
+                    </tr>
+                </thead>
+                <tbody>
                 @forelse ($histories as $history)
+                    @foreach ($history->HistoryDetail as $detail)
                     <tr scope="row">
                         <td>{{$history->transaction_date}}</td>
-                        <td>
-                            @foreach ($history->HistoryDetail as $detail)
-                                <div>{{$detail->item_name}} ; {{$detail->item_price}} ; {{$detail->quantity}}</div>
-                            @endforeach
-                        </td>
+                        <td>{{$detail->item_name}}</td>
+                        <td>{{$detail->item_price}}</td>
+                        <td>{{$detail->quantity}}</td>
+                        @php
+                            $total = $detail->item_price * $detail->quantity;
+                        @endphp
+                        <td>{{$total}}</td>
                     </tr>
+                    @endforeach
                 @empty
-                    <tr scope="row">
-                        <td>
-                            No transaction have been made
-                        </td>
-                    </tr>
+                    <td>
+                        No transaction have been made
+                    </td>
                 @endforelse
-            </tbody>
-        </table>
-        <div class="pagination">
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination d-flex flex-column">
             {{$histories->withQueryString()->links()}}
         </div>
     </div>
-  </section>
+</div>
+
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

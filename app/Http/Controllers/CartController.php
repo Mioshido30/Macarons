@@ -16,18 +16,30 @@ class CartController extends Controller
         return view('cart', compact('cart'))->with('user',$user);
     }
 
-    public function insert(Macaron $macaron) {
-        $cart = new Cart();
+    public function insert(Macaron $macaron, Request $request) {
 
-        $user = Auth::user();
+        $find = Cart::where('name', $macaron->name)->get();
 
-        $cart->user_id = $user->id;
-        $cart->name = $macaron->name;
-        $cart->description = $macaron->description;
-        $cart->price = $macaron->price;
-        $cart->amount = 1;
-        $cart->image_url = $macaron->image_url;
-        $cart->save();
+        if (count($find) == 0) {
+            $cart = new Cart();
+
+            $user = Auth::user();
+
+            $cart->user_id = $user->id;
+            $cart->name = $macaron->name;
+            $cart->description = $macaron->description;
+            $cart->price = $macaron->price;
+            $cart->amount = $request['amount'];
+            $cart->image_url = $macaron->image_url;
+            $cart->save();
+        }
+        else {
+            $cart = Cart::find($find[0]->id);
+
+            $cart->amount += (int) $request['amount'];
+            $cart->save();
+
+        }
 
         return redirect()->back();
     }
@@ -46,8 +58,16 @@ class CartController extends Controller
     public function redItem($id){
 
         $cart = Cart::find($id);
-        $cart->amount = $cart->amount-1;
-        $cart->save();
+
+        if ($cart->amount > 0) {
+            $cart->amount = $cart->amount-1;
+            $cart->save();
+
+            if ($cart->amount == 0) {
+                $cart->delete();
+            }
+
+        }
 
         return redirect()->back();
     }

@@ -3,11 +3,11 @@
 @section('title', 'Shop')
 @section('navbar-shop', 'active')
 @section('content')
-<div>
+<div class="shop-container">
     <div class="container-fluid bg-secondary" style="height:1px;"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-4 pt-5 px-4" style="padding-bottom:200px;">
+    <main class="container">
+        <div class="flex d-flex">
+            <div class="w-100 py-5 px-4" style="max-width:350px;">
                 <div style="position:sticky;top:80px">
                     <div class="filter-category">
                         <a class="nav-link d-flex border border-secondary" data-bs-toggle="collapse" href="#collapseCategory" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -19,15 +19,19 @@
                         </a>
                         <div class="collapse" id="collapseCategory">
                             <div class="d-flex flex-column">
-                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="#">
+                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop">
+                                    <div style="width:8px;height:auto;background-color:#9f6000"></div>
+                                    <span class="p-2">All</span>
+                                </a>
+                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop/category/macarons/seasonal">
                                     <div style="width:8px;height:auto;background-color:#9f6000"></div>
                                     <span class="p-2">Seasonal</span>
                                 </a>
-                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="#">
+                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop/category/macarons/limited">
                                     <div style="width:8px;height:auto;background-color:#9f6000"></div>
                                     <span class="p-2">Limited</span>
                                 </a>
-                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="#">
+                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop/category/macarons/new">
                                     <div style="width:8px;height:auto;background-color:#9f6000"></div>
                                     <span class="p-2">New</span>
                                 </a>
@@ -44,12 +48,20 @@
                         </a>
                         <div class="collapse" id="collapsePrice">
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
-                                <button type="button" class="btn btn-light">Rp 100.000</button>
-                                <button type="button" class="btn btn-light">Rp 250.000</button>
+                                <a href="/shop/category/price/100">
+                                    <button type="button" class="btn btn-light">Rp 100.000</button>
+                                </a>
+                                <a href="/shop/category/price/250">
+                                    <button type="button" class="btn btn-light">Rp 250.000</button>
+                                </a>
                             </div>
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
-                                <button type="button" class="btn btn-light">Rp 500.000</button>
-                                <button type="button" class="btn btn-light">Rp 1.000.000</button>
+                                <a href="/shop/category/price/500">
+                                    <button type="button" class="btn btn-light">Rp 500.000</button>
+                                </a>
+                                <a href="/shop/category/price/1000">
+                                    <button type="button" class="btn btn-light">Rp 1.000.000</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -63,30 +75,38 @@
                         </a>
                         <div class="collapse" id="collapseFlavor">
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
-                                <button type="button" class="btn btn-light">Vanilla</button>
-                                <button type="button" class="btn btn-light">Chocolate</button>
+                                <a href="/shop/category/flavor/vanilla">
+                                    <button type="button" class="btn btn-light">Vanilla</button>
+                                </a>
+                                <a href="/shop/category/flavor/chocolate">
+                                    <button type="button" class="btn btn-light">Chocolate</button>
+                                </a>
                             </div>
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
-                                <button type="button" class="btn btn-light">Fruity</button>
-                                <button type="button" class="btn btn-light">Rainbow</button>
+                                <a href="/shop/category/flavor/fruity">
+                                    <button type="button" class="btn btn-light">Fruity</button>
+                                </a>
+                                <a href="/shop/category/flavor/rainbow">
+                                    <button type="button" class="btn btn-light">Rainbow</button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-8 py-5 px-4">
+            <div class="w-100 py-5 px-4" style="max-width:900px">
                 <div class="d-flex justify-content-end align-items-center p-4 bg-secondary-subtle">
                     <div class="px-2">
                         Sort By
                     </div>
                     <div class="dropdown-center">
                         <a class="btn btn-light btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Filter
+                          {{ $sort }}
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Featured</a></li>
-                          <li><a class="dropdown-item" href="#">Low to High</a></li>
-                          <li><a class="dropdown-item" href="#">High to Low</a></li>
+                          <li><a class="dropdown-item" href="/shop/filter/featured">Featured</a></li>
+                          <li><a class="dropdown-item" href="/shop/filter/low">Low to High</a></li>
+                          <li><a class="dropdown-item" href="/shop/filter/high">High to Low</a></li>
                         </ul>
                       </div>
                 </div>
@@ -94,12 +114,7 @@
                     @forelse ($macarons as $macaron)
                         <div class="card bg-light rounded-4">
                             <div class="position-relative">
-                                <a class="nav-link" href="#">
-                                    <img src="{{ $macaron->image_url }}" class="card-img-top rounded-4 object-fit-cover" alt="Rainbow Macaron">
-                                    <div class="hide bg-white bg-opacity-75 rounded-5 justify-content-center align-items-center position-absolute top-50 start-50 translate-middle" style="width:50px;height:50px">
-                                        <i class="fa-regular fa-heart fa-2x"></i>
-                                    </div>
-                                </a>
+                                <img src="{{ $macaron->image_url }}" class="card-img-top rounded-4 object-fit-cover" alt="Macaron">
                             </div>
                             <div class="card-body d-flex flex-column align-items-center">
                                 <h5 class="card-title fw-bold">{{ $macaron->name }}</h5>
@@ -113,10 +128,9 @@
                                     @endfor
                                 </div>
                                 <h5 class="fw-bold py-1">Rp {{ $macaron->price }}</h5>
-                                <form action="{{ url('/cart/insert', ['macaron' => $macaron->id]) }}" method="POST">
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Add to Cart</button>
-                                </form>
+                                <a href="/shop/product/{{$macaron->id}}">
+                                    <button type="submit" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Go to Details</button>
+                                </a>
                             </div>
                         </div>
                     @empty
@@ -125,6 +139,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div style="width:100%;height:200px"></div>
+    </main>
 </div>
 @endsection

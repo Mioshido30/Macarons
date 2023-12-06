@@ -19,7 +19,7 @@ class HistoryController extends Controller
         $history = new History();
 
         $history->user_id = $req->id;
-        $history->transaction_date = date("Y-m-d");
+        $history->transaction_date = date("Y-m-d H:i:s");
         $history->save();
 
         foreach ($cart as $data) {

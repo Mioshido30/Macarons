@@ -35,7 +35,7 @@ class LoginRegisterController extends Controller
         $profile = new Profile();
         $profile->name = $request->name;
         $profile->email = $request->email;
-        $profile->image_url = 'https://res.cloudinary.com/dotj27nru/image/upload/v1701606247/users/Dennis%20Tandelon.png';
+        $profile->image_url = 'https://res.cloudinary.com/dotj27nru/image/upload/v1701606247/users/nw3iq8zyz07iornse7qe.jpeg';
         $profile->save();
 
         $credentials = $request->only('email', 'password');
