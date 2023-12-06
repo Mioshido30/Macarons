@@ -30,6 +30,8 @@ Route::prefix('/shop')->group(function() {
 
     Route::get('/', [MacaronController::class, 'shop']);
 
+    Route::get('/macaron/{name}',[MacaronController::class,'collections']);
+
     Route::get('/product/{id}', [MacaronController::class, 'details']);
 
     Route::get('/filter/{filter}', [MacaronController::class, 'filter']);
