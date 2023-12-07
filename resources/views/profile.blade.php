@@ -25,8 +25,8 @@
           </div>
     </div>
     <div class="container d-flex flex-column bg-white p-4 mt-5 justify-content-start gap-4 position-relative" style="max-width:1000px">
-        <h3 class="fw-bold">Transactions History</h3>
-        <div style="overflow:scroll;">
+        <span class="fs-3 fw-bold">Transactions History</span>
+        <div style="overflow-x:scroll;">
             <table class="table table-striped table-hover border">
                 <thead>
                     <tr>

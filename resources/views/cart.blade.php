@@ -10,7 +10,7 @@
     <div class="container-fluid px-5" style="padding-bottom: 150px">
         <div class="flex d-flex justify-content-center">
             <div class="cart-product p-5 mw-100" style="width:800px">
-                <h4 class="fw-bold">Products [{{ count($cart) }}]</h4>
+                <span class="fw-bold fs-4">Products [{{ count($cart) }}]</span>
                 @php
                     $total = 0;
                 @endphp
@@ -20,14 +20,14 @@
                     <div class="d-flex flex-column px-4 pt-3 pb-2">
                         <div class="mb-auto">
                             <h3 class="fw-bold">{{ $item->name }}</h3>
-                            <h5 class="fw-bold pt-1 pb-2">Rp {{ $item->price }}</h5>
+                            <span class="fw-bold fs-5 pt-1 pb-2">Rp {{ $item->price }}</span>
                             <div class="d-flex justify-content-around align-items-center py-1 border border-secondary rounded-5 " style="width:85px;">
                                 <a class="nav-link" href="/cart/{{$item->id}}/red">-</a>
                                 <span class="">{{$item->amount}}</span>
                                 <a class="nav-link" href="/cart/{{$item->id}}/add">+</a>
                             </div>
                         </div>
-                        <h5 class="fw-bold pt-3">Total : Rp {{$item->amount * $item->price}}</h5>
+                        <span class="fw-bold fs-5 pt-3">Total : Rp {{$item->amount * $item->price}}</span>
                         @php
                             $total += ($item->price * $item->amount);
                         @endphp
@@ -36,8 +36,8 @@
                 @empty
                 <div class="container bg-light p-5 mt-3 mb-4 border border-secondary">
                     <div class="d-flex flex-column justify-content-center align-items-center py-5">
-                        <i class="fa-regular fa-face-sad-tear fa-2x"></i>
-                        <h2>Cart is empty...</h2>
+                        <i class="fa-regular fa-face-sad-tear fa-3x"></i>
+                        <span class="fs-2">Cart is empty...</span>
                     </div>
                 </div>
                 @endforelse
@@ -55,13 +55,13 @@
             </div>
             <div class="pt-5 px-4" style="padding-bottom:150px;">
                 <div class="container" style="position:sticky;top:100px;">
-                    <h4 class="fw-bold">Order Summary</h4>
-                    <h5 class="fw-bold mt-3">Subtotal : Rp {{ $total }}</h5>
+                    <span class="fw-bold fs-4">Order Summary</span>
+                    <span class="fw-bold fs-5 mt-3">Subtotal : Rp {{ $total }}</span>
                     <div class="form-floating py-2">
                         <textarea class="form-control border-2 border-warning rounded-4" placeholder="Add notes here" id="floatingTextarea2" style="height: 100px"></textarea>
                         <label for="floatingTextarea2">Add note to your order</label>
                     </div>
-                    <h6 class="py-2 fst-italic">Shipping, taxes, and discounts will be calculated at checkout</h6>
+                    <p class="py-2 fst-italic">Shipping, taxes, and discounts will be calculated at checkout</p>
                     <div class="d-flex justify-content-center py-1">
                         <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Proceed to Checkout</button>
                     </div>
@@ -73,7 +73,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Checkout Message</h1>
+                <span class="modal-title fs-5" id="staticBackdropLabel">Checkout Message</span>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

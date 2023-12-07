@@ -49,18 +49,18 @@
                         <div class="collapse" id="collapsePrice">
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
                                 <a href="/shop/category/price/100">
-                                    <button type="button" class="btn btn-light">Rp 100.000</button>
+                                    <button type="button" class="btn btn-light">< Rp 10.000</button>
                                 </a>
                                 <a href="/shop/category/price/250">
-                                    <button type="button" class="btn btn-light">Rp 250.000</button>
+                                    <button type="button" class="btn btn-light">< Rp 25.000</button>
                                 </a>
                             </div>
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
                                 <a href="/shop/category/price/500">
-                                    <button type="button" class="btn btn-light">Rp 500.000</button>
+                                    <button type="button" class="btn btn-light">< Rp 50.000</button>
                                 </a>
                                 <a href="/shop/category/price/1000">
-                                    <button type="button" class="btn btn-light">Rp 1.000.000</button>
+                                    <button type="button" class="btn btn-light">< Rp 100.000</button>
                                 </a>
                             </div>
                         </div>
@@ -127,14 +127,17 @@
                                         @endif
                                     @endfor
                                 </div>
-                                <h5 class="fw-bold py-1">Rp {{ $macaron->price }}</h5>
+                                <span class="fw-bold fs-5 py-1">Rp {{ $macaron->price }}</span>
                                 <a href="/shop/product/{{$macaron->id}}">
                                     <button type="submit" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Go to Details</button>
                                 </a>
                             </div>
                         </div>
                     @empty
-                        <h1>No Macarons Found???</h1>
+                    <div class="d-flex flex-column p-4 align-items-center">
+                        <img src="{{ url('/images/sad macaron.png')}}" width="100" alt="Sad Macaron">
+                        <span class="fs-2 fw-bold">No Macarons Found...</span>
+                    </div>
                     @endforelse
                 </div>
             </div>

@@ -45,8 +45,6 @@
                             <a href="/register"> Register</a>
                         </span>
                     </div>
-
-
                   </form>
             </div>
         </div>

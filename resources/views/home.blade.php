@@ -93,7 +93,7 @@
                                     @endif
                                 @endfor
                             </div>
-                            <h5 class="fw-bold py-1">Rp {{ $macaron->price }}</h5>
+                            <span class="fw-bold fs-5 py-1">Rp {{ $macaron->price }}</span>
                             <a href="/shop/product/{{$macaron->id}}">
                                 <button type="button" class="btn btn-outline-warning text-black py-2 px-4 border-2 rounded-5">Go to Details</button>
                             </a>

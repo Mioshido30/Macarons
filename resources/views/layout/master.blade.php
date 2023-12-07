@@ -71,7 +71,7 @@
         </div>
         <div class="offcanvas offcanvas-end" style="width:280px" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <h4 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h4>
+                <span class="offcanvas-title fs-4" id="offcanvasRightLabel">Your Cart</span>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="container-fluid bg-secondary" style="height:1px"></div>
@@ -97,20 +97,20 @@
                 @empty
                     <div class="d-flex flex-column gap-1 pb-1">
                         <i class="fa-regular fa-face-sad-cry fa-4x text-center"></i>
-                        <h5 class="text-center">Cart is empty...</h5>
+                        <span class="fs-5 text-center">Cart is empty...</span>
                     </div>
                     <div class="container-fluid bg-secondary mb-2" style="height:1px"></div>
                 @endforelse
                 <div class="d-flex justify-content-between pb-2">
-                    <h5 class="fw-bold">Total</h5>
-                    <h5 class="fw-bold">
+                    <span class="fw-bold fs-5">Total</span>
+                    <span class="fw-bold fs-5">
                         Rp
                         @if ($cart)
                             {{ $total }}
                         @else
                             -
                         @endif
-                    </h5>
+                    </span>
                 </div>
                 <div class="container-fluid bg-secondary" style="height:1px"></div>
                 <p class="pt-2 fst-italic">
@@ -221,11 +221,11 @@
 
     <footer class="bg-black">
         <div class="container-fluid triangle-patterns"></div>
-        <div class="content container-fluid pt-5 d-flex justify-content-evenly">
-            <h3>Contact Us</h3>
-            <h3>Help</h3>
-            <h3>Support</h3>
-            <h3>NewSeller</h3>
+        <div class="content container-fluid pt-5 d-flex flex-wrap gap-3 justify-content-evenly">
+            <span class="fs-3">Contact Us</span>
+            <span class="fs-3">Help</span>
+            <span class="fs-3">Support</span>
+            <span class="fs-3">NewSeller</span>
         </div>
         <div class="container-fluid py-3 px-5 bg-white d-flex flex-row justify-content-between align-items-center">
             <p>&copy; Copyright 2023 Macaron</p>

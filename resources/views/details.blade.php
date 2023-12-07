@@ -31,7 +31,7 @@
                 </div>
                 <div class="details-desc d-flex flex-column mw-100 gap-2" style="width:400px">
                     <h1>{{ $macaron->name }}</h1>
-                    <h5>Rp {{ $macaron->price }}</h5>
+                    <span class="fs-5">Rp {{ $macaron->price }}</span>
                     <div class="pb-2">
                         @for ($i = 1; $i <= 5; $i++)
                             @if ($i > $macaron->ratings)
