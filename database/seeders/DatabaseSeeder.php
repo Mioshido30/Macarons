@@ -41,8 +41,8 @@ class DatabaseSeeder extends Seeder
         \DB::table('carts')->insert([
             'user_id' => 1,
             'name' => 'Lemon Macaron',
-            'description' => 'Sour',
-            'price' => 2000,
+            'description' => 'Fruity',
+            'price' => 12000,
             'amount' => 2,
             'image_url' => '/images/macarons/lemon macaron.jpeg',
 
@@ -65,16 +65,6 @@ class DatabaseSeeder extends Seeder
             'item_name' => 'Mio',
             'item_price' => '100000',
             'quantity' => '2'
-        ]);
-
-        \DB::table('macarons')->insert([
-            'name' => 'Mint Macaron',
-            'Description' => 'Cold feeling from the breeze of Minty tasty macaronies slap my shivering cakes. The actual cake...',
-            'price' => 369000,
-            'ratings' => 5,
-            'flavor' => 'Sour',
-            'category' => 'Yes#Poop',
-            'image_url' => 'https://res.cloudinary.com/dotj27nru/image/upload/v1701606247/users/Dennis%20Tandelon.png'
         ]);
 
         $this->call(MacaronSeeder::class);

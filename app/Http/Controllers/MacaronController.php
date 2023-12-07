@@ -83,20 +83,25 @@ class MacaronController extends Controller
         }
         else if ($type == "price") {
             $price = 0;
-            if ($category == "100") {
-                $price = 100000;
+            $operator = "";
+            if ($category == "gt50") {
+                $operator = ">";
+                $price = 50000;
             }
-            if ($category == "250") {
-                $price = 250000;
-            }
-            if ($category == "500") {
-                $price = 500000;
-            }
-            if ($category == "1000") {
-                $price = 1000000;
+            else {
+                $operator = "<";
+                if ($category == "10") {
+                    $price = 10000;
+                }
+                if ($category == "25") {
+                    $price = 25000;
+                }
+                if ($category == "50") {
+                    $price = 50000;
+                }
             }
 
-            $categorized = Macaron::where('price', '<', $price)->get();
+            $categorized = Macaron::where('price', $operator, $price)->get();
         }
         else if ($type = "flavor") {
             $flavor  = "";

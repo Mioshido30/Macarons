@@ -16,16 +16,16 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Rainbow Macaron',
                 'description' => "Macaron made with rainbow flavors... Rainbows... Yum.. G.. yum... G... Not what you're thinking okay...",
-                'price' => 429000,
+                'price' => 10000,
                 'ratings' => 4,
                 'image_url' => '/images/macarons/rainbow macaron.jpeg',
                 'flavor' => 'Rainbow',
-                'category' => '-#-#-#-'
+                'category' => '-#-#Premium#-'
             ],
             [
                 'name' => 'Tiramisu Macaron',
                 'description' => "I believe in love at first sight between a person and tiramisu. Tiramisu is like a rush of emotions for your taste buds.",
-                'price' => 520000,
+                'price' => 15000,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/tiramisu macaron.jpeg',
                 'flavor' => 'Chocolate',
@@ -34,7 +34,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Lemon Macaron',
                 'description' => "“Life isn't just about getting lemons out of it. An unexpected turn and a kind smile warms you up on the coldest of days.”, quoted by Lemon-chan.",
-                'price' => 310000,
+                'price' => 90000,
                 'ratings' => 4,
                 'image_url' => '/images/macarons/lemon macaron.jpeg',
                 'flavor' => 'Fruity',
@@ -43,7 +43,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Mocha Macaron',
                 'description' => "Coffee flavored macarons makes me up HARD every morning and night. Not sus btw.",
-                'price' => 350000,
+                'price' => 7000,
                 'ratings' => 4,
                 'image_url' => '/images/macarons/mocha macaron.jpg',
                 'flavor' => 'Chocolate',
@@ -52,7 +52,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Bear Macaron',
                 'description' => "Bear Macarons... You could say the are BEARy cute... Hahaha... unBEARably funny I must say...",
-                'price' => 420000,
+                'price' => 12000,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/bear macaron.jpeg',
                 'flavor' => 'Chocolate',
@@ -61,7 +61,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Orange Macaron',
                 'description' => "Orange is the color of truth. When I think of flavor, I think of color. Orange is orange...",
-                'price' => 300000,
+                'price' => 9000,
                 'ratings' => 4,
                 'image_url' => '/images/macarons/orange macaron.jpeg',
                 'flavor' => 'Fruity',
@@ -70,7 +70,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Vogue Macaron',
                 'description' => "Vogue is an art. It lives through the trend of fashion. Do any pose and that's Vogue right there...",
-                'price' => 899000,
+                'price' => 79000,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/vogue macaron.png',
                 'flavor' => 'Rainbow',
@@ -79,7 +79,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Mint Macaron',
                 'description' => "Cold feeling from the breeze of Minty tasty macaronies slap my shivering cakes. The actual cake...",
-                'price' => 369000,
+                'price' => 9000,
                 'ratings' => 3,
                 'image_url' => '/images/macarons/mint macaron.jpg',
                 'flavor' => 'Vanilla',
@@ -88,7 +88,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Strawberry Macaron',
                 'description' => "You don’t need a fishy sports car or the latest smartphone to live. Pick up a simple strawberry and bite into it...",
-                'price' => 450000,
+                'price' => 12000,
                 'ratings' => 4,
                 'image_url' => '/images/macarons/strawberry macaron.jpeg',
                 'flavor' => 'Fruity',
@@ -97,7 +97,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Sushi Macaron',
                 'description' => "Life without you is like sushi without rice… or macaron crust… or meringue…",
-                'price' => 499000,
+                'price' => 49000,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/sushi macaron.jpeg',
                 'flavor' => 'Vanilla',
@@ -106,7 +106,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Halloween Macaron',
                 'description' => "Trick or treat, I'm walking the streets, searching for neighbors with good candy to eat.",
-                'price' => 666666,
+                'price' => 66666,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/halloween macaron.jpeg',
                 'flavor' => 'Chocolate',
@@ -115,7 +115,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Burger Macaron',
                 'description' => "Life is too short to miss out on beautiful things like a double cheeseburger...",
-                'price' => 412000,
+                'price' => 26000,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/burger macaron.jpeg',
                 'flavor' => 'Chocolate',
@@ -124,7 +124,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Pokemon Macaron',
                 'description' => "“Every day, I brush my Pokemon a hundred strokes. Then, I do me.” says the losing-soon challenger.",
-                'price' => 699000,
+                'price' => 29000,
                 'ratings' => 5,
                 'image_url' => '/images/macarons/pokemon macaron.jpeg',
                 'flavor' => 'Rainbow',

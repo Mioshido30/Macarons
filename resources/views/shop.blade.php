@@ -48,19 +48,19 @@
                         </a>
                         <div class="collapse" id="collapsePrice">
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
-                                <a href="/shop/category/price/100">
-                                    <button type="button" class="btn btn-light">Rp 10.000</button>
+                                <a href="/shop/category/price/10">
+                                    <button type="button" class="btn btn-light">< Rp 10.000</button>
                                 </a>
-                                <a href="/shop/category/price/250">
-                                    <button type="button" class="btn btn-light">Rp 25.000</button>
+                                <a href="/shop/category/price/25">
+                                    <button type="button" class="btn btn-light">< Rp 25.000</button>
                                 </a>
                             </div>
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
-                                <a href="/shop/category/price/500">
-                                    <button type="button" class="btn btn-light">Rp 50.000</button>
+                                <a href="/shop/category/price/50">
+                                    <button type="button" class="btn btn-light">< Rp 50.000</button>
                                 </a>
-                                <a href="/shop/category/price/1000">
-                                    <button type="button" class="btn btn-light">Rp 100.000</button>
+                                <a href="/shop/category/price/gt50">
+                                    <button type="button" class="btn btn-light">> Rp 50.000</button>
                                 </a>
                             </div>
                         </div>
