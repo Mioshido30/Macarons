@@ -74,7 +74,7 @@ class MacaronSeeder extends Seeder
                 'ratings' => 5,
                 'image_url' => '/images/macarons/vogue macaron.png',
                 'flavor' => 'Rainbow',
-                'category' => 'Yes#-#Limited#New'
+                'category' => 'Yes#-#Premium#New'
             ],
             [
                 'name' => 'Mint Macaron',
@@ -90,7 +90,7 @@ class MacaronSeeder extends Seeder
                 'description' => "You don’t need a fishy sports car or the latest smartphone to live. Pick up a simple strawberry and bite into it...",
                 'price' => 450000,
                 'ratings' => 4,
-                'image_url' => '/images/macarons/strawberry macaron.jpg',
+                'image_url' => '/images/macarons/strawberry macaron.jpeg',
                 'flavor' => 'Fruity',
                 'category' => '-#Seasonal#-#-'
             ],
@@ -128,7 +128,7 @@ class MacaronSeeder extends Seeder
                 'ratings' => 5,
                 'image_url' => '/images/macarons/pokemon macaron.jpeg',
                 'flavor' => 'Rainbow',
-                'category' => 'Yes#Seasonal#Limited#New'
+                'category' => 'Yes#Seasonal#Premium#New'
             ],
         ];
 

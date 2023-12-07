@@ -66,7 +66,7 @@
                     {{ count($cart) }}
                     <span class="visually-hidden">cart notifs</span>
                 </span>
-                @endisset
+                @endif
             </a>
         </div>
         <div class="offcanvas offcanvas-end" style="width:280px" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -108,7 +108,7 @@
                         @if ($cart)
                             {{ $total }}
                         @else
-                            -
+                            0
                         @endif
                     </span>
                 </div>
@@ -173,9 +173,9 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="/shop/category/macarons/limited">
+                        <a class="dropdown-item" href="/shop/category/macarons/premium">
                             <i class="fa-solid fa-wand-magic-sparkles pe-1"></i>
-                            Limited
+                            Premium
                         </a>
                     </li>
                     <li>

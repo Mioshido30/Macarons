@@ -21,7 +21,7 @@
                         <div class="mb-auto">
                             <h3 class="fw-bold">{{ $item->name }}</h3>
                             <span class="fw-bold fs-5 pt-1 pb-2">Rp {{ $item->price }}</span>
-                            <div class="d-flex justify-content-around align-items-center py-1 border border-secondary rounded-5 " style="width:85px;">
+                            <div class="d-flex justify-content-around align-items-center py-1 mt-2 border border-secondary rounded-5 " style="width:85px;">
                                 <a class="nav-link" href="/cart/{{$item->id}}/red">-</a>
                                 <span class="">{{$item->amount}}</span>
                                 <a class="nav-link" href="/cart/{{$item->id}}/add">+</a>
@@ -54,9 +54,9 @@
                 </div>
             </div>
             <div class="pt-5 px-4" style="padding-bottom:150px;">
-                <div class="container" style="position:sticky;top:100px;">
+                <div class="container d-flex flex-column" style="position:sticky;top:100px;">
                     <span class="fw-bold fs-4">Order Summary</span>
-                    <span class="fw-bold fs-5 mt-3">Subtotal : Rp {{ $total }}</span>
+                    <span class="fw-bold fs-5 mt-2">Subtotal : Rp {{ $total }}</span>
                     <div class="form-floating py-2">
                         <textarea class="form-control border-2 border-warning rounded-4" placeholder="Add notes here" id="floatingTextarea2" style="height: 100px"></textarea>
                         <label for="floatingTextarea2">Add note to your order</label>

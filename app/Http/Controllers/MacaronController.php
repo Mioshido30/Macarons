@@ -57,8 +57,8 @@ class MacaronController extends Controller
                 $cats = "Seasonal";
                 $index = 1;
             }
-            if ($category == "limited") {
-                $cats = "Limited";
+            if ($category == "premium") {
+                $cats = "Premium";
                 $index = 2;
             }
             if ($category == "new") {
@@ -190,7 +190,7 @@ class MacaronController extends Controller
             'flavor' => 'required',
             'bestselling' => 'required',
             'seasonal' => 'required',
-            'limited' => 'required',
+            'premium' => 'required',
             'new' => 'required',
         ]);
 
@@ -202,7 +202,7 @@ class MacaronController extends Controller
         $macaron->image_url = $validate['image'];
         $macaron->flavor = $validate['flavor'];
 
-        $category = $validate['bestselling'] .'#'. $validate['seasonal'] .'#'. $validate['limited'] .'#'. $validate['new'];
+        $category = $validate['bestselling'] .'#'. $validate['seasonal'] .'#'. $validate['premium'] .'#'. $validate['new'];
         $macaron->category = $category;
 
         $macaron->save();

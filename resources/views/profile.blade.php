@@ -52,8 +52,8 @@
                     </tr>
                     @endforeach
                 @empty
-                    <td>
-                        No transaction have been made
+                    <td colspan="5" class="text-center">
+                        No transactions have been made
                     </td>
                 @endforelse
                 </tbody>

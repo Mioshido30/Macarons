@@ -27,9 +27,9 @@
                                     <div style="width:8px;height:auto;background-color:#9f6000"></div>
                                     <span class="p-2">Seasonal</span>
                                 </a>
-                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop/category/macarons/limited">
+                                <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop/category/macarons/premium">
                                     <div style="width:8px;height:auto;background-color:#9f6000"></div>
-                                    <span class="p-2">Limited</span>
+                                    <span class="p-2">Premium</span>
                                 </a>
                                 <a class="nav-link d-flex border border-secondary bg-warning-subtle" href="/shop/category/macarons/new">
                                     <div style="width:8px;height:auto;background-color:#9f6000"></div>
@@ -49,18 +49,18 @@
                         <div class="collapse" id="collapsePrice">
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
                                 <a href="/shop/category/price/100">
-                                    <button type="button" class="btn btn-light">< Rp 10.000</button>
+                                    <button type="button" class="btn btn-light">Rp 10.000</button>
                                 </a>
                                 <a href="/shop/category/price/250">
-                                    <button type="button" class="btn btn-light">< Rp 25.000</button>
+                                    <button type="button" class="btn btn-light">Rp 25.000</button>
                                 </a>
                             </div>
                             <div class="d-flex flex-wrap justify-content-evenly pt-3 gap-3">
                                 <a href="/shop/category/price/500">
-                                    <button type="button" class="btn btn-light">< Rp 50.000</button>
+                                    <button type="button" class="btn btn-light">Rp 50.000</button>
                                 </a>
                                 <a href="/shop/category/price/1000">
-                                    <button type="button" class="btn btn-light">< Rp 100.000</button>
+                                    <button type="button" class="btn btn-light">Rp 100.000</button>
                                 </a>
                             </div>
                         </div>

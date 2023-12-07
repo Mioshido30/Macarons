@@ -22,7 +22,7 @@
                             <button class="btn btn-outline-danger">Best Selling</button>
                         @elseif ($tags == "Seasonal")
                             <button class="btn btn-outline-success">{{ $tags }}</button>
-                        @elseif($tags == "Limited")
+                        @elseif($tags == "Premium")
                             <button class="btn btn-outline-info">{{ $tags }}</button>
                         @elseif($tags == "New")
                             <button class="btn btn-outline-warning">{{ $tags }}</button>
