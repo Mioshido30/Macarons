@@ -34,7 +34,7 @@ class MacaronSeeder extends Seeder
             [
                 'name' => 'Lemon Macaron',
                 'description' => "“Life isn't just about getting lemons out of it. An unexpected turn and a kind smile warms you up on the coldest of days.”, quoted by Lemon-chan.",
-                'price' => 90000,
+                'price' => 9000,
                 'ratings' => 4,
                 'image_url' => '/images/macarons/lemon macaron.jpeg',
                 'flavor' => 'Fruity',
@@ -101,7 +101,7 @@ class MacaronSeeder extends Seeder
                 'ratings' => 5,
                 'image_url' => '/images/macarons/sushi macaron.jpeg',
                 'flavor' => 'Vanilla',
-                'category' => 'Yes#-#-#New'
+                'category' => 'Yes#-#Premium#New'
             ],
             [
                 'name' => 'Halloween Macaron',

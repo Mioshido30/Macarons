@@ -15,10 +15,10 @@
             <div class="banner-image"></div>
           </div>
           <div class="carousel-item" style="max-height:400px;">
-            <div class="banner-image"></div>
+            <div class="banner-image second"></div>
           </div>
           <div class="carousel-item" style="max-height:400px;">
-            <div class="banner-image"></div>
+            <div class="banner-image third"></div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

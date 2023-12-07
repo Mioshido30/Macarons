@@ -50,6 +50,24 @@ footer .content {
     background-size: cover;
 }
 
+.banner-image.second {
+    width: 100%;
+    height: 400px;
+    background-image: url("/images/macaron banner 2.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-image.third {
+    width: 100%;
+    height: 400px;
+    background-image: url("/images/macaron banner 3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .card {
     width: 320px;
 }
