@@ -18,9 +18,16 @@ class CartController extends Controller
 
     public function insert(Macaron $macaron, Request $request) {
 
-        $find = Cart::where('name', $macaron->name)->get();
+        $user = Auth::user();
+        $cart = Cart::where('user_id',$user->id)->get();
+        $find = null;
+        foreach($cart as $c){
+            if($c->name == $macaron->name){
+                $find = $c;
+            }
+        }
 
-        if (count($find) == 0) {
+        if ($find == null) {
             $cart = new Cart();
 
             $user = Auth::user();
@@ -34,7 +41,7 @@ class CartController extends Controller
             $cart->save();
         }
         else {
-            $cart = Cart::find($find[0]->id);
+            $cart = Cart::find($find->id);
 
             $cart->amount += (int) $request['amount'];
             $cart->save();
