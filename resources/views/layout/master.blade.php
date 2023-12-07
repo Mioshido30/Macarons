@@ -142,19 +142,19 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/shop/macaron/Halloween Macaron">
                             <i class="fa-solid fa-spider pe-1"></i>
                             Halloween
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/shop/macaron/Burger Macaron">
                             <i class="fa-solid fa-burger pe-1"></i>
                             Burger
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="/shop/macaron/Vogue Macaron">
                             <i class="fa-solid fa-shirt pe-1"></i>
                             Vogue
                         </a>

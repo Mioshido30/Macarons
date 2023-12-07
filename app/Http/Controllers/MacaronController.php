@@ -165,6 +165,20 @@ class MacaronController extends Controller
         return view('details', compact('cart', 'category', 'user'))->with('macaron', $id);
     }
 
+    public function collections($name) {
+        $user = Auth::user();
+        $cart = [];
+
+        if(Auth::check()){
+            $cart = Cart::where('user_id',$user->id)->get();
+        }
+
+        $id = Macaron::where('name',str_replace("%20"," ",$name))->first();
+
+        $category = explode('#', $id->category);
+        return view('details', compact('cart', 'category', 'user'))->with('macaron', $id);
+    }
+
     public function form(Request $request) {
 
         $validate = $request->validate([

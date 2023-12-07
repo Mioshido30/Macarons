@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Sour',
             'price' => 2000,
             'amount' => 2,
-            'image_url' => '/images/macarons/lemon macaron.jps',
+            'image_url' => '/images/macarons/lemon macaron.jpeg',
 
         ]);
 
@@ -77,5 +77,6 @@ class DatabaseSeeder extends Seeder
             'image_url' => 'https://res.cloudinary.com/dotj27nru/image/upload/v1701606247/users/Dennis%20Tandelon.png'
         ]);
 
+        $this->call(MacaronSeeder::class);
     }
 }
